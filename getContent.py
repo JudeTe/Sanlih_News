@@ -55,6 +55,8 @@ def getNewsContent(urlQueue):
             news_title = news_html.find("h1", class_="news-title-3").text
             news_create = news_html.find("div", class_="page-title-text")
             news_create_time = news_create.find("time", class_="page-date").text
+            news_create_time = news_create_time.split(" ")[0].split("/")[0] + news_create_time.split(" ")[0].split("/")[
+                1] + news_create_time.split(" ")[0].split("/")[2]
             news_content = news_html.find("div", id="Content1").text
             news_keyword = news_html.find("div", class_="keyword").text
             str_html = str(list(news_html))
