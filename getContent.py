@@ -53,7 +53,8 @@ def getNewsContent(urlQueue):
 
             # 以下為里安寫的
             news_title = news_html.find("h1", class_="news-title-3").text
-            news_create_time = news_html.find("div", class_="page-title-text").text
+            news_create = news_html.find("div", class_="page-title-text")
+            news_create_time = news_create.find("time", class_="page-date").text
             news_content = news_html.find("div", id="Content1").text
             news_keyword = news_html.find("div", class_="keyword").text
             str_html = str(list(news_html))
