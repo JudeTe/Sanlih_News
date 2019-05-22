@@ -51,7 +51,7 @@ def getNewsContent(urlQueue):
 
             news_html = BeautifulSoup(news_response, features="html.parser") # features="html.parser" for Ubuntu 18.04
 
-            # 以下為里安寫的
+            # Below
             news_title = news_html.find("h1", class_="news-title-3").text
             news_create = news_html.find("div", class_="page-title-text")
             news_create_time = news_create.find("time", class_="page-date").text
